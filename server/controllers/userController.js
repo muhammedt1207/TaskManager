@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const generateAccessToken = require('../utils/jwt/genarateToken');
 
-const JWT_SECRET = 'your-secret-key'; // In production, use environment variable
+const JWT_SECRET = process.env.JWT_SECRET || 'secret-key'; 
 
 const userController = {
     register: async (req, res) => {
